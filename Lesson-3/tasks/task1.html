@@ -57,11 +57,16 @@
     <script>
         // Аргументи
 
-
+        let sonName = prompt('Назвіть сина','Андрій');
+        let candyForSon = parseInt(prompt(`Скільки цукерок даєш?`,'5'));
+        let daughterName = prompt('Назвіть доньку','Ганна');
+        let candyForseDaughter = parseInt(prompt(`Скільки цукерок даєш?`,'10'));
 
         // Обчислення
 
-
+        if(candyForSon > candyForseDaughter) alert(`${sonName} має більше цукерок`);
+        else if(candyForSon < candyForseDaughter) alert(`${daughterName} має більше цукерок`);
+        else alert('Діти мають цукероки однаково');        
 
         // Вивод даних
 
