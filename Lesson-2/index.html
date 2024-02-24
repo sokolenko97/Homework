@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900" rel="stylesheet" />
+    <style>
+        body{
+            color: #393E46;
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            font-size: 20px;
+            margin-bottom: 0px;
+        }
+        .tasks{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        form{
+            flex: 0 1 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border: 2px dotted #00ADB5;
+            border-radius: 10px;
+            padding: 0 20px 10px;
+        }
+        button{
+            align-self: center;
+            background: #00ADB5;
+            border-radius: 5px;
+            border: none;
+            min-width: 240px;
+            padding: 10px;
+            color: #EEEEEE;
+        }
+        ol, p{
+            flex-grow: 1;
+        }
+        p, li, button{
+            font-size: 20px;
+        }
+        .check{
+            margin: 0 auto;
+            border: 1px solid black;
+            font-size: 20px;
+            padding: 20px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Задачі Лінійні (обов'язкові)</h1>
+    <div class="tasks">
+        <form action="">
+            <h2>Задача 0.</h2>
+            <ol>
+                <li>S1 = a + 12 + b</li>
+                <li>S2 = √((a + b) / 2a)</li>
+                <li>S3 = √'3(a + b)c</li>
+                <li>S4 = sin(a / -b)</li>
+            </ol>
+            <button id="task-0">Обчислити</button>
+        </form>
+        <form action="">
+            <h2>Задача 1.</h2>
+        
+                <p>Знайти суму, добуток та частку двох дійсних чисел.Результат вивести у формі таблиці
+                </p>
+                <button id="task-1">Знайти</button>
+        </form>
+        <form action="">
+            <h2>Задача 2.</h2>
+        
+                <p>Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.</p> <button id="task-2">Ввести дату народження</button>
+        
+        </form>
+        <form action="">
+            <h2>Задача 3.</h2>
+        
+                <p>Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).</p>
+                    <button id="task-3">Розрахувати вартість</button>
+        
+        </form>
+        <form action="">
+            <h2>Задача 4.</h2>
+        
+                <p>Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів</p> <button id="task-4">Визначити</button>
+        
+        </form>
+        <form action="">
+            <h2>Задача 5.</h2>
+        
+                <p>Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин</p> <button id="task-5">Ввести секунди</button>
+        
+        </form>
+        <form action="">
+            <h2>Задача 6.</h2>
+        
+                <p>З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки</p> <button id="task-6">Ввести</button>
+        
+        </form>
+        <form action="">
+            <h2>Задача 7.</h2>
+        
+                <p>Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).</p>
+                    <button id="task-7">Генерувати</button>
+        
+        </form>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
