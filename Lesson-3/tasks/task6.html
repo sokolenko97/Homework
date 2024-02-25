@@ -21,7 +21,7 @@
         const dayNum = parseInt(prompt('Введіть номер дня тижня','1'));
         let weekDay
 
-        // Обчислення та Вивод даних
+        // Обчислення
 
         switch (dayNum) {
             case 1: weekDay = 'Понеділок';               
@@ -42,6 +42,8 @@
             default: 'Нажаль, у тижні тільки 7 днів :(';
                 break;
         }
+
+        // Вивод даних
         document.write(`<h3>${weekDay} - ${dayNum}й день тижня</h3>`)
     </script>
 </body>

@@ -13,17 +13,26 @@
     <a href="../index.html">На головну</a>
     <a href="./task2.html">Ще раз</a>
     <a href="./task3.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
-        let itemPrice = parseFloat(prompt('Введіть ціну товару', '150.25'));
-        let availableMoney = parseFloat(prompt('Введіть доступну суму', '156.26'));
+        const itemPrice = parseFloat(prompt('Введіть ціну товару', '150.25'));
+        const availableMoney = parseFloat(prompt('Введіть доступну суму', '156.26'));
         const lotteryPrice = 4
+        let calcResult
 
-        // Обчислення та Вивод даних
+        // Обчислення
 
-        if (itemPrice > availableMoney) alert('Недостатньо грошей');
-        else if (availableMoney >= (itemPrice + lotteryPrice)) alert('Бажаєте купити лотерею за 4 грн?');
-        else alert('Дякую за покупку!');
+        if (itemPrice > availableMoney) 
+            calcResult = 'Недостатньо грошей';
+        else if (availableMoney >= (itemPrice + lotteryPrice)) 
+            calcResult = 'Бажаєте купити лотерею за 4 грн?';
+        else 
+            calcResult = 'Дякую за покупку!';
+
+        // Вивод даних
+
+        document.write(`<h3>${calcResult}</h3>`);
 
     </script>
 </body>

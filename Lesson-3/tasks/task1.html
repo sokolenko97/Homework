@@ -13,20 +13,26 @@
     <a href="../index.html">На головну</a>
     <a href="./task1.html">Ще раз</a>
     <a href="./task2.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
-        let sonName = prompt('Назвіть сина','Андрій');
-        let candyForSon = parseInt(prompt(`Скільки цукерок даєш?`,'5'));
-        let daughterName = prompt('Назвіть доньку','Ганна');
-        let candyForseDaughter = parseInt(prompt(`Скільки цукерок даєш?`,'10'));
+        const firstChildName = prompt("Введіть ім'я дитини",'Андрій');
+        const candyForFirstChild = parseInt(prompt(`Скільки цукерок даруєш?`,'5'));
+        const secondChildName = prompt("Введіть ім'я другої дитини",'Ганна');
+        const candyForSecondChild = parseInt(prompt(`Скільки цукерок даруєш?`,'10'));
 
-        // Обчислення та Вивод даних
+        let compareCandyNum
 
-        if(candyForSon > candyForseDaughter) alert(`${sonName} має більше цукерок`);
-        else if(candyForSon < candyForseDaughter) alert(`${daughterName} має більше цукерок`);
-        else alert('Діти мають цукероки однаково');        
+        // Обчислення 
 
+        if(candyForFirstChild > candyForSecondChild) compareCandyNum = `${firstChildName} має більше цукерок`;
+        else if(candyForFirstChild < candyForSecondChild) compareCandyNum = `${secondChildName} має більше цукерок`;
+        else compareCandyNum = 'Діти мають однаково цукерок';        
+
+        // Вивод даних
+
+        document.write(`<h3>${compareCandyNum}</h3>`);
 
     </script>
 </body>

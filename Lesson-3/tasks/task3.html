@@ -13,6 +13,7 @@
     <a href="../index.html">На головну</a>
     <a href="./task3.html">Ще раз</a>
     <a href="./task4.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
@@ -20,16 +21,21 @@
         const maxNum = 5;
         const randomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
         
-        let firstGuess = parseInt(prompt('Вгадайте число від 1 до 5','3'));
-        let secondGuess = parseInt(prompt('Спробуйте ще','2'));
+        const firstGuess = parseInt(prompt('Вгадайте число від 1 до 5','3'));
+        let guessedNumber
 
-        // Обчислення та Вивод даних
+        // Обчислення
 
-        if (randomNumber === firstGuess || randomNumber === secondGuess) alert('Вітаю! Ви вгадали випадкове число!');
+        if (randomNumber === firstGuess) guessedNumber = 'Вітаю! Ви вгадали випадкове число';
         else {
-            secondGuess;
-            if (secondGuess != randomNumber) alert('Не вгадали');
+            const secondGuess = parseInt(prompt('Спробуйте ще','2'));
+
+            if (secondGuess != randomNumber) guessedNumber = 'Не вгадали';
+            else guessedNumber = 'Вітаю! Ви вгадали випадкове число'
         }
+
+        // Вивод даних
+        document.write(`<h3>${guessedNumber} - це ${randomNumber}</h3>`);
 
     </script>
 </body>

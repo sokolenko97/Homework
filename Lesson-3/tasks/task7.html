@@ -21,15 +21,15 @@
         const monthNum = parseInt(prompt('Введіть номер місяця','7'));
         let season
 
-        // Обчислення та Вивод даних
+        // Обчислення
 
         // Варіант з if/else
 
-        // if (monthNum < 1 || monthNum > 12) alert('Нажаль, є тільки 12 місяців :(');
-        // else if (monthNum < 3 || monthNum === 12) alert('Зима');
-        // else if (monthNum >= 3 && monthNum < 6) alert('Весна');
-        // else if (monthNum >= 6 && monthNum < 9) alert('Літо');
-        // else if (monthNum >= 9 && monthNum < 12) alert('Осінь');
+        // if (monthNum < 1 || monthNum > 12) season = 'Нажаль, є тільки 12 місяців :(';
+        // else if (monthNum < 3 || monthNum === 12) season = 'Зима';
+        // else if (monthNum >= 3 && monthNum < 6) season = 'Весна';
+        // else if (monthNum >= 6 && monthNum < 9) season = 'Літо';
+        // else if (monthNum >= 9 && monthNum < 12) season = 'Осінь';
 
         switch (monthNum) {
             case 1:
@@ -56,7 +56,10 @@
                 'Нажаль, є тільки 12 місяців :('
                 break;
         }
-        document.write(`<h3>${monthNum}-й місяць - ${season}</h3>`)
+
+        // Вивод даних
+
+        document.write(`<h3>${monthNum}-й місяць - ${season}</h3>`);
     </script>
 </body>
 </html>

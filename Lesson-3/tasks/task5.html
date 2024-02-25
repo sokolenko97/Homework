@@ -21,7 +21,7 @@
         const licenseLetter = prompt('Введіть категорію водійських прав','ABC');
         let licenseType = 'Ви можете керувати '
 
-        // Обчислення та Вивод даних
+        // Обчислення
 
         switch (licenseLetter) {
             case 'A': licenseType += 'Мотоциклом';
@@ -50,7 +50,10 @@
             default: licenseType = 'Невірне значення';
                 break;
             }
-            document.write(`<h3>Категорія ${licenseLetter} - ${licenseType}</h3>`)
+
+        //Вивод даних
+        
+        document.write(`<h3>Категорія ${licenseLetter} - ${licenseType}</h3>`);
     </script>
 </body>
 </html>

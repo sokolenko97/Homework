@@ -17,17 +17,21 @@
     <script>
         // Аргументи
 
-        const age = parseInt(prompt('Скільки вам років?','18'));
-        let 
+        const humanAge = parseInt(prompt('Скільки вам років?','18'));
+        let humanStatus
 
-        // Обчислення та Вивод даних
+        // Обчислення 
 
-        if (age < 6) alert('Дитина');
-        else if (age < 18) alert('Школяр');
-        else if (age < 23) alert('Студент');
-        else if (age < 60) alert('Працівник');
-        else if (age >= 60) alert('Пенсіонер');
-        document.write(`<h3>${weekDay} - ${dayNum}й день тижня</h3>`)
+        if (humanAge > 150 || humanAge < 0) humanStatus = 'Точно людина? =)';
+        else if (humanAge < 6) humanStatus = 'Дитина';
+        else if (humanAge < 18) humanStatus = 'Школяр';
+        else if (humanAge < 23) humanStatus = 'Студент';
+        else if (humanAge < 60) humanStatus = 'Працівник';
+        else if (humanAge >= 60) humanStatus = 'Пенсіонер';
+        
+        // Вивод даних
+
+        document.write(`<h3>${humanAge} - ${humanStatus}</h3>`);
 
 
     </script>
