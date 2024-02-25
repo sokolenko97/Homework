@@ -32,7 +32,7 @@
         const secondRandomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
         const SUM = firstRandomNumber + secondRandomNumber;
 
-        let guess = parseInt(prompt(`${firstRandomNumber} + _ = ${SUM}`));
+        let guess = parseInt(prompt(`${firstRandomNumber} + __ = ${SUM}`));
 
         if (guess === secondRandomNumber) {
             alert('Правильно! Молодец! =)');
