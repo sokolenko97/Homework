@@ -14,25 +14,43 @@
     <a href="../index.html">На головну</a>
     <a href="./task5.html">Ще раз</a>
     <a href="./task6.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
-        let licenseType = prompt('Введіть категорію водійських прав','B');
+        const licenseLetter = prompt('Введіть категорію водійських прав','ABC');
+        let licenseType = 'Ви можете керувати '
 
         // Обчислення та Вивод даних
 
-        switch (licenseType) {
-            case 'A': alert('Ви можете керувати Мотоциклом');
+        switch (licenseLetter) {
+            case 'A': licenseType += 'Мотоциклом';
                 break;
-            case 'B': alert('Ви можете керувати Легковим автомобілем');
+            case 'B': licenseType += 'Легковим автомобілем';
                 break;
-            case 'C': alert('Ви можете керувати Вантажним автомобілем');
+            case 'C': licenseType += 'Вантажним автомобілем';
+                break;
+            case 'AB': 
+            case 'BA': licenseType += 'Мотоциклом та Легковим автомобілем';
+                break;
+            case 'BC': 
+            case 'CB': licenseType += 'Легковим та Вантажним автомобілем';
+                break;
+            case 'AC': 
+            case 'CA': licenseType += 'Мотоциклом та Вантажним автомобілем';
+                break;
+            case 'ABC': 
+            case 'ACB':
+            case 'BAC': 
+            case 'BCA':
+            case 'CBA': 
+            case 'CAB': licenseType += 'Мотоциклом, Легковим та Вантажним автомобілем';
                 break;
         
-            default: alert('Невірне значення');
+            default: licenseType = 'Невірне значення';
                 break;
-        }
-
+            }
+            document.write(`<h3>Категорія ${licenseLetter} - ${licenseType}</h3>`)
     </script>
 </body>
 </html>

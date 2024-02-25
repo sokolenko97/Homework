@@ -19,7 +19,9 @@
 
         if (guess === secondRandomNumber) {
             alert('☑');
-            window.location.reload();
+            setTimeout(function(){
+               window.location.reload();
+            }, 1000); 
         }
         else {
             alert('X')

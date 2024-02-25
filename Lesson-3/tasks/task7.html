@@ -9,24 +9,54 @@
 </head>
 <body>
     <h1>Задача 7</h1>
-
+    <p>З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься</p>
     <a href="./task6.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task7.html">Ще раз</a>
     <a href="./task1.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
-
+        const monthNum = parseInt(prompt('Введіть номер місяця','7'));
+        let season
 
         // Обчислення та Вивод даних
 
+        // Варіант з if/else
 
+        // if (monthNum < 1 || monthNum > 12) alert('Нажаль, є тільки 12 місяців :(');
+        // else if (monthNum < 3 || monthNum === 12) alert('Зима');
+        // else if (monthNum >= 3 && monthNum < 6) alert('Весна');
+        // else if (monthNum >= 6 && monthNum < 9) alert('Літо');
+        // else if (monthNum >= 9 && monthNum < 12) alert('Осінь');
 
-        
-
-
-
+        switch (monthNum) {
+            case 1:
+            case 2:
+            case 12:
+                season = 'Зима';               
+                break;
+            case 3:
+            case 4:
+            case 5:
+                season = 'Весна';               
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = 'Літо';               
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = 'Осінь';               
+                break;        
+            default: 
+                'Нажаль, є тільки 12 місяців :('
+                break;
+        }
+        document.write(`<h3>${monthNum}-й місяць - ${season}</h3>`)
     </script>
 </body>
 </html>

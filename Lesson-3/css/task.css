@@ -12,6 +12,9 @@ h1{
     color:brown;
     font-size: 20px;
 }
+h3{
+    color:darkblue;
+}
 a{
     display: inline-block;
     background-color:brown;
