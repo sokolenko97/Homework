@@ -8,8 +8,7 @@
 </head>
 <body>
     <h1>Задача 3</h1>
-    <div class="task">
-    </div>
+        <p>Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.</p>
     <a href="./task2.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task3.html">Ще раз</a>
@@ -17,15 +16,20 @@
     <script>
         // Аргументи
 
+        const minNum = 1;
+        const maxNum = 5;
+        const randomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
+        
+        let firstGuess = parseInt(prompt('Вгадайте число від 1 до 5','3'));
+        let secondGuess = parseInt(prompt('Спробуйте ще','2'));
 
+        // Обчислення та Вивод даних
 
-        // Обчислення
-
-
-
-        // Вивод даних
-
-
+        if (randomNumber === firstGuess || randomNumber === secondGuess) alert('Вітаю! Ви вгадали випадкове число!');
+        else {
+            secondGuess;
+            if (secondGuess != randomNumber) alert('Не вгадали');
+        }
 
     </script>
 </body>
