@@ -3,27 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дане</title>
+    <title>Данику</title>
     <link rel="stylesheet" href="../css/task.css">
-    <style>
-        li{
-            list-style: none;
-            font-size: 20px;
-        }
-        p{
-
-        }
-    </style>
 </head>
 <body>
-    <!-- <h1>Какого числа нехватает?</h1>
-    <ul>
-        <li><p>6 + _ = 13</p></li>
-    </ul> -->
-    <!-- <a href="./task8.html">5</a>
-    <a href="./task8.html">8</a>
-    <a href="./task8.html">7</a>
-    <a href="./task8.html">6</a> -->
     <script>
         
         const minNum = 1;
@@ -35,11 +18,11 @@
         let guess = parseInt(prompt(`${firstRandomNumber} + __ = ${SUM}`));
 
         if (guess === secondRandomNumber) {
-            alert('Правильно! Молодец! =)');
+            alert('☑');
             window.location.reload();
         }
         else {
-            alert('Неверно =(')
+            alert('⮾')
             window.location.reload();
         }
 
