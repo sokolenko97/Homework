@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel</title>
+    <link rel="stylesheet" href="../css/task.css">
+    <style>
+        li{
+            list-style: none;
+            font-size: 20px;
+        }
+        p{
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Какого числа нехватает?</h1>
+    <ul>
+        <li><p>6 + _ = 13</p></li>
+    </ul> -->
+    <!-- <a href="./task8.html">5</a>
+    <a href="./task8.html">8</a>
+    <a href="./task8.html">7</a>
+    <a href="./task8.html">6</a> -->
+    <script>
+        
+        const minNum = 1;
+        const maxNum = 9;
+        const firstRandomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
+        const secondRandomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
+        const SUM = firstRandomNumber + secondRandomNumber;
+
+        let guess = parseInt(prompt(`${firstRandomNumber} + _ = ${SUM}`));
+
+        if (guess === secondRandomNumber) {
+            alert('Правильно! Молодец! =)');
+            window.location.reload();
+        }
+        else {
+            alert('Неверно =(')
+            window.location.reload();
+        }
+
+    </script>
+</body>
+</html>

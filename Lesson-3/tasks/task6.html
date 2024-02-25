@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Задача 6</h1>
+    <p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.</p>
     <a href="./task5.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task6.html">Ще раз</a>
@@ -16,16 +17,29 @@
     <script>
         // Аргументи
 
-
+        let dayNum = parseInt(prompt('Введіть номер дня тижня','7'));
 
         // Обчислення та Вивод даних
 
-
-
+        switch (dayNum) {
+            case 1: alert('Понеділок');               
+                break;
+            case 2: alert('Вівторок');               
+                break;
+            case 3: alert('Середа');              
+                break;
+            case 4: alert('Четвер');                 
+                break;
+            case 5: alert("П'ятниця");       
+                break;
+            case 6: alert(`Субота`);           
+                break;
+            case 7: alert('Неділя');       
+                break;
         
-
-
-
+            default: alert('Нажаль, у тижні тільки 7 днів :(');
+                break;
+        }
     </script>
 </body>
 </html>
