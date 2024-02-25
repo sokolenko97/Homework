@@ -16,15 +16,15 @@
     <script>
         // Аргументи
 
-        let age = parseInt(prompt('Скільки вам років?','18'))
+        let age = parseInt(prompt('Скільки вам років?','18'));
 
         // Обчислення та Вивод даних
 
-
-
-        
-
-
+        if (age < 6) alert('Дитина');
+        else if (age < 18) alert('Школяр');
+        else if (age < 23) alert('Студент');
+        else if (age < 60) alert('Працівник');
+        else if (age >= 60) alert('Пенсіонер');
 
     </script>
 </body>
