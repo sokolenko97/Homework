@@ -14,32 +14,35 @@
     <a href="../index.html">На головну</a>
     <a href="./task6.html">Ще раз</a>
     <a href="./task7.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
-        let dayNum = parseInt(prompt('Введіть номер дня тижня','7'));
+        const dayNum = parseInt(prompt('Введіть номер дня тижня','1'));
+        let weekDay
 
         // Обчислення та Вивод даних
 
         switch (dayNum) {
-            case 1: alert('Понеділок');               
+            case 1: weekDay = 'Понеділок';               
                 break;
-            case 2: alert('Вівторок');               
+            case 2: weekDay = 'Вівторок';               
                 break;
-            case 3: alert('Середа');              
+            case 3: weekDay = 'Середа';              
                 break;
-            case 4: alert('Четвер');                 
+            case 4: weekDay = 'Четвер';                 
                 break;
-            case 5: alert("П'ятниця");       
+            case 5: weekDay = "П'ятниця";       
                 break;
-            case 6: alert(`Субота`);           
+            case 6: weekDay = `Субота`;           
                 break;
-            case 7: alert('Неділя');       
+            case 7: weekDay = 'Неділя';       
                 break;
         
-            default: alert('Нажаль, у тижні тільки 7 днів :(');
+            default: 'Нажаль, у тижні тільки 7 днів :(';
                 break;
         }
+        document.write(`<h3>${weekDay} - ${dayNum}й день тижня</h3>`)
     </script>
 </body>
 </html>
