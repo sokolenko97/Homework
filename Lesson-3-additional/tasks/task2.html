@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 2</h1>
+        <p>Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок повинен знаходитися в межах від 1 до 100). Користувач вводить число і виграє, якщо число знаходиться у цьому проміжку, або розташоване від нього (від лівого або правого краю) не більше ніж на 10.</p>
+    <a href="./task1.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task2.html">Ще раз</a>
+    <a href="./task3.html">Далі</a>
+    <script>
+        // Аргументи
+
+        const minNum = 1;
+        const maxNum = 100;
+        const randomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
+        
+        const guessedNumber = parseInt(prompt('Вгадайте число від 1 до 100 з похибкою до 10','3'));
+        const acceptedRange = Math.abs(randomNumber-guessedNumber)
+        let result
+
+        // Обчислення
+
+        if (randomNumber === guessedNumber || (acceptedRange >= 1 && acceptedRange <= 10)) result = 'Вітаю! Ви виграли!';
+        else 
+        result = 'Холодно';
+
+        // Вивод даних
+        document.write(`<h3>${result} - число було ${randomNumber}, ви ввели ${guessedNumber}</h3>`);
+
+    </script>
+</body>
+</html>

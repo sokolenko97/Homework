@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <link rel="stylesheet" href="../css/task.css">
+
+</head>
+<body>
+    <h1>Задача 5</h1>
+    <p>Модифікувати попередню задачу з можливістю після пострілу переміщення корабля у випадковим чином вибрану сусідню клітинку (якщо звичайно корабель не було потоплено за першим разом).
+    </p>
+    <a href="./task4.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task5.html">Ще раз</a>
+    <a href="./task6.html">Далі</a>
+    <script>
+         // Аргументи
+
+        const squares = parseInt(prompt("Введіть кількість квадратів на річці:"));
+        const shipPosition = Math.floor(Math.random() * squares) + 1; // Генеруємо випадкову позицію корабля            
+        const guess1 = parseInt(prompt("Введіть номер квадрата для першого пострілу:"));
+
+
+        // Обчислення
+
+
+        if (guess1 < 1 || guess1 > squares) {
+          alert("Ви ввели некоректне значення!");
+        } else {
+          let result1 = '';
+          if (guess1 === shipPosition) {
+            result1 = "Потоплено!";
+          } else if (Math.abs(guess1 - shipPosition) === 1) {
+            result1 = "Пошкоджено!";
+          } else {
+            result1 = "Мимо!";
+          }
+          alert(result1);
+      
+          if (result1 === "Потоплено!") {
+            document.write("Ви виграли! Корабель знаходився в квадраті " + shipPosition);
+          } else {
+            const guess2 = parseInt(prompt("Введіть номер квадрата для другого пострілу:"));
+        
+            if (guess2 < 1 || guess2 > squares) {
+              alert("Ви ввели некоректне значення!");
+            } else {
+              let result2 = '';
+              if (guess2 === shipPosition) {
+                result2 = "Потоплено!";
+              } else if (Math.abs(guess2 - shipPosition) === 1) {
+                result2 = "Пошкоджено!";
+              } else {
+                result2 = "Мимо!";
+              }
+              alert(result2);
+          
+              if (result2 === "Потоплено!") {
+                document.write("Ви виграли! Корабель знаходився в квадраті " + shipPosition);
+              } else {
+                document.write("Ви програли. Корабель знаходився в квадраті " + shipPosition);
+              }
+            }
+          }
+        }
+
+        // Вивод даних
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 3</h1>
+    <p>Комп’ютер загадує число від 1 до 10. Двоє користувачів надають свої відповіді. Виграє той, у кого число знаходиться ближче до загаданого комп’ютером числа.
+    </p>
+    <a href="./task2.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task3.html">Ще раз</a>
+    <a href="./task4.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+        const minNum = 1;
+        const maxNum = 10;
+        const randomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
+        
+        const firstUserNum = parseInt(prompt('Перший гравець, введіть число від 1 до 10','3'));
+        const secondUserNum = parseInt(prompt('Другий гравець, введіть число від 1 до 10','5'));
+
+        const firstUserResult= Math.abs(randomNumber-firstUserNum)
+        const secondUserResult= Math.abs(randomNumber-secondUserNum)
+
+        let winner
+
+        // Обчислення
+
+        if (firstUserResult < secondUserResult) winner = 'Перший гравець переміг!';
+        else if (firstUserResult > secondUserResult) winner = 'Другий гравець переміг!';
+        else winner = 'Нічия';
+
+        // Вивод даних
+        document.write(`<h3>${winner} - число було ${randomNumber}. Перший гравець ввів ${firstUserNum}, другий - ${secondUserNum}</h3>`);
+
+    </script>
+</body>
+</html>

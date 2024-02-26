@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<style>
+    li{
+    list-style: none;
+    font-weight: 600;
+    color: darkblue;
+    margin-bottom: 10px;
+}
+</style>
+<body>
+    <h1>Задача 1</h1>
+        <p>На екран виводиться меню:</p>
+        <ol>
+            <li>Веселий</li>
+            <li>Сумний</li>
+            <li>Обурений</li>
+        </ol>
+        <p>Користувач вводить номер пункту меню і на екрані з’являється відповідне зображення смайла. </p>    
+    <a href="./task7.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task1.html">Ще раз</a>
+    <a href="./task2.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+        const chooseSmileMenu = parseInt(prompt(`Оберіть номер зі списку який відповідає вашому настрою: \n\n1. Веселий \n2. Сумний \n3. Обурений\n`))
+
+        let smile
+
+        // Обробка
+
+        switch (chooseSmileMenu) {
+            case 1: smile = '😄'
+                break;
+            case 2: smile = '🙁'
+                break;
+            case 3: smile = '😠'
+                break;
+        
+            default: smile = '🤷‍♂️'
+                break;
+        }
+
+        // Вивод даних
+        alert(`${smile}`);
+        document.write(`${smile}`);
+
+    </script>
+</body>
+</html>
