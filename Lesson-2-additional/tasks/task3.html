@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 3</h1>
+    <p>З клавіатури вводяться вартість одиниці та кількість одиниць двох товарів. Вивести на екран вартість кожного з видів товарів окремо і загальну вартість.</p>
+    <a href="./task2.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task3.html">Ще раз</a>
+    <a href="./task4.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+        const firstItemPrice = parseFloat(prompt('Введіть вартість Яблук', '3000'));
+        const firstItemQuantity = parseInt(prompt('Введіть кількість Яблук', '5'));
+        const secondItemPrice = parseFloat(prompt('Введіть вартість Апельсин', '3000'));
+        const secondItemQuantity = parseInt(prompt('Введіть кількість Апельсин', '10'));
+
+        // Обчислення
+
+        const firstItemTotal = firstItemPrice * firstItemQuantity;
+        const secondItemTotal = secondItemPrice * secondItemQuantity;
+
+        const total = firstItemTotal + secondItemTotal;
+
+
+        // Вивод даних
+
+        document.write(`<ul>
+            <li>Яблука - ${firstItemTotal.toFixed(2)}грн</li>
+            <li>Апельсин - ${secondItemTotal.toFixed(2)}грн</li>
+            <li>Загальна вартість - ${total.toFixed(2)}грн</li>
+        </ul>`)
+
+    </script>
+</body>
+</html>

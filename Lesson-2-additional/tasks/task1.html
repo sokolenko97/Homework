@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 1</h1>
+    <p>Дано ширину екрана та кількість елементів, які повинні бути відображені у рядку. Визначити ширину елементів, які повинні бути відображені у цьому рядку. </p>
+    <a href="./task7.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task1.html">Ще раз</a>
+    <a href="./task2.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+        const screenWidth = parseInt(prompt('Введіть ширину екрану', '1200'));
+        const elementsNum = parseInt(prompt('Введіть кількість елементів у рядку', '10'));
+        
+        // Обробка
+
+        const elementWidth = Math.round(screenWidth / elementsNum);
+
+        // Вивод даних
+
+        document.write(`<h3>${elementWidth} пікселів ширина елементу</h3>`);
+
+    </script>
+</body>
+</html>
