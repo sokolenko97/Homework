@@ -24,37 +24,37 @@
 
         // Варіант з if/else
 
-        // if (monthNum < 1 || monthNum > 12) season = 'Нажаль, є тільки 12 місяців :(';
-        // else if (monthNum < 3 || monthNum === 12) season = 'Зима';
-        // else if (monthNum >= 3 && monthNum < 6) season = 'Весна';
-        // else if (monthNum >= 6 && monthNum < 9) season = 'Літо';
-        // else if (monthNum >= 9 && monthNum < 12) season = 'Осінь';
+        if (monthNum < 1 || monthNum > 12) season = 'Нажаль, є тільки 12 місяців :(';
+        else if (monthNum < 3 || monthNum === 12) season = 'Зима';
+        else if (monthNum < 6) season = 'Весна';
+        else if (monthNum < 9) season = 'Літо';
+        else season = 'Осінь';
 
-        switch (monthNum) {
-            case 1:
-            case 2:
-            case 12:
-                season = 'Зима';               
-                break;
-            case 3:
-            case 4:
-            case 5:
-                season = 'Весна';               
-                break;
-            case 6:
-            case 7:
-            case 8:
-                season = 'Літо';               
-                break;
-            case 9:
-            case 10:
-            case 11:
-                season = 'Осінь';               
-                break;        
-            default: 
-                'Нажаль, є тільки 12 місяців :('
-                break;
-        }
+        // switch (monthNum) {
+        //     case 1:
+        //     case 2:
+        //     case 12:
+        //         season = 'Зима';               
+        //         break;
+        //     case 3:
+        //     case 4:
+        //     case 5:
+        //         season = 'Весна';               
+        //         break;
+        //     case 6:
+        //     case 7:
+        //     case 8:
+        //         season = 'Літо';               
+        //         break;
+        //     case 9:
+        //     case 10:
+        //     case 11:
+        //         season = 'Осінь';               
+        //         break;        
+        //     default: 
+        //     season = 'Нажаль, є тільки 12 місяців :('
+        //         break;
+        // }
 
         // Вивод даних
 

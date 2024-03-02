@@ -21,16 +21,16 @@
         const maxNum = 5;
         const randomNumber = minNum + Math.floor(Math.random()*(maxNum-minNum+1));
         
-        const firstGuess = parseInt(prompt('Вгадайте число від 1 до 5','3'));
+        let userGuess = parseInt(prompt('Вгадайте число від 1 до 5','3'));
         let guessedNumber
 
         // Обчислення
 
-        if (randomNumber === firstGuess) guessedNumber = 'Вітаю! Ви вгадали випадкове число';
+        if (randomNumber === userGuess) guessedNumber = 'Вітаю! Ви вгадали випадкове число';
         else {
-            const secondGuess = parseInt(prompt('Спробуйте ще','2'));
+            userGuess = parseInt(prompt('Спробуйте ще','2'));
 
-            if (secondGuess != randomNumber) guessedNumber = 'Не вгадали';
+            if (userGuess != randomNumber) guessedNumber = 'Не вгадали';
             else guessedNumber = 'Вітаю! Ви вгадали випадкове число'
         }
 

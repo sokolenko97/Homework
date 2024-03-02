@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 1</h1>
+    <div class="task">
+        <p> Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел вводиться користувачем.</p>  
+    </div>
+    <a href="./task7.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task1.html">Ще раз</a>
+    <a href="./task2.html">Далі</a>
+    <script>
+        // Аргументи
+        
+        const minRandomNumber = 1;
+        const maxRandomNumber = 100;
+        const randomNumberInput = parseInt(prompt('Скільки випадкових чисел згенерувати?', '20'));
+
+        document.write('<ul>');
+        for (let rows = 0; rows < randomNumberInput; rows++) {
+            const randomNumber = minRandomNumber + Math.floor(Math.random() * maxRandomNumber)
+            document.write(`<li>${randomNumber}</li>`);
+        }
+        document.write('</ul>');
+        // Обчислення 
+
+
+        // Вивод даних
+
+
+    </script>
+</body>
+</html>
