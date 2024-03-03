@@ -9,22 +9,49 @@
 </head>
 <body>
     <h1>Задача 5</h1>
-    
+    <p> Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).</p></a>
     <a href="./task4.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task5.html">Ще раз</a>
     <a href="./task6.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
-        
-
+        let imagePath;
+        let result = '';
+        let prize
         // Обчислення
-        
+        for (let imageCycle = 0; imageCycle < 3; imageCycle++) {
+            
+            const randomImage = 1 + Math.floor(Math.random() * 4);
+            switch (randomImage) {
+                case 1: imagePath = '../img/free-animated-icon-rocket-6172512.gif';
+                        result += '1'
+                break;
+                case 2: imagePath = '../img/free-animated-icon-award-6172530.gif';
+                        result += '2'
+                break;
+                case 3: imagePath = '../img/free-animated-icon-meteor-rain-6455041.gif';
+                        result += '3'
+                break;
+                case 4: imagePath = '../img/free-animated-icon-money-bag-6172509.gif';
+                        result += '4'
+                break;
+            }
+            // Вивод даних
+            document.write(`<img src="${imagePath}">`)
+        }
+        if (result === '111')
+            prize = '<p>Вітаю! Ви виграли 100 грн!</p>'
+        else if (result === '222')
+            prize = '<p>Вітаю! Ви виграли 200 грн!</p>'
+        else if (result === '333')
+            prize = '<p>Вітаю! Ви виграли 500 грн!</p>'
+        else if (result === '444')
+            prize = '<p>Вітаю! Ви виграли 1000 грн!</p>'
+        else prize = '<p>Спробуйте ще</p>'
 
-        // Вивод даних
-
-
-
+        document.write(`${prize}`)
     </script>
 </body>
 </html>

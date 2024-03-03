@@ -7,24 +7,32 @@
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 3</h1>
-    
+    <h1>Задача 6</h1>
+    <p>Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) за зразком</p>
     <a href="./task2.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task3.html">Ще раз</a>
     <a href="./task4.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
-
-
-        // Обчислення
-
-
-
-        // Вивод даних
-
-
+        let cellNumber = 0
+        
+        // Обчислення та Вивод даних
+        
+        for (let table = 0; table < 3; table++) {
+            document.write('<table border="2px">')
+            for (let column = 0; column < 3; column++) {
+                document.write('<tr>')
+                for (let row = 0; row < 3; row++) {
+                    document.write(`<td>${++cellNumber}</td>`)
+                }
+                document.write('</tr>')            
+            }
+            document.write('</table>')
+        }
+        
 
     </script>
 </body>

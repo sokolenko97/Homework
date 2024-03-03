@@ -46,15 +46,3 @@ a:hover{
         font-size: 20px;
     }
 }
-table{
-    display: inline-block;
-    margin-right: 50px;
-}
-
-label{
-    display: block;
-}
-img{
-    max-width: 200px;
-    margin-right: 10px;
-}

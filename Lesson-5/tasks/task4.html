@@ -8,24 +8,27 @@
 </head>
 <body>
     <h1>Задача 4</h1>
-    
+    <p>Вивести на екран N абзаців (N вводиться користувачем) за зразком:</p>
     <a href="./task3.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task4.html">Ще раз</a>
     <a href="./task5.html">Далі</a>
+    <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
+        let chapterNumber = parseInt(prompt('Введіть кількість абзаців','4'))
+        let number = 0
 
+        // Обчислення та Вивод даних
 
-        // Обчислення
-
-
-
-        // Вивод даних
-
-
-
+        for (let chapter = 0; chapter < chapterNumber; chapter++) {
+            document.write(`<h1>Заголовок ${++number}</h1>`)
+            let paragraphNumber = 0
+            for (let paragraph = 0; paragraph < number; paragraph++) {
+                document.write(`<p>Розділ ${number}, параграф ${++paragraphNumber}</p>`)
+            }
+        }
     </script>
 </body>
 </html>
