@@ -13,7 +13,7 @@
     <a href="./task4.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task5.html">Ще раз</a>
-    <a href="./task6.html">Далі</a>
+    <a href="./task1.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
         // Аргументи
@@ -23,7 +23,8 @@
         // Обчислення
         for (let imageCycle = 0; imageCycle < 3; imageCycle++) {
             
-            const randomImage = 1 + Math.floor(Math.random() * 4);
+            const imgTotal = 4
+            const randomImage = 1 + Math.floor(Math.random() * imgTotal);
             switch (randomImage) {
                 case 1: imagePath = '../img/free-animated-icon-rocket-6172512.gif';
                         result += '1'
