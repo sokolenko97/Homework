@@ -18,15 +18,14 @@
         // Аргументи
 
         let titleQuantity = parseInt(prompt('Введіть кількість абзаців','4'))
-        let chapterNumber = 0
 
         // Обчислення та Вивод даних
 
-        for (let chapter = 0; chapter < titleQuantity; chapter++) {
-            document.write(`<h1>Заголовок ${++chapterNumber}</h1>`)
+        for (let chapter = 1; chapter <= titleQuantity; chapter++) {
+            document.write(`<h1>Заголовок ${chapter}</h1>`)
             let paragraphNumber = 0
-            for (let paragraph = 0; paragraph < chapterNumber; paragraph++) {
-                document.write(`<p>Розділ ${chapterNumber}, параграф ${++paragraphNumber}</p>`)
+            for (let paragraph = 0; paragraph < chapter; paragraph++) {
+                document.write(`<p>Розділ ${chapter}, параграф ${++paragraphNumber}</p>`)
             }
         }
     </script>
