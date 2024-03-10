@@ -23,10 +23,10 @@
 
         for (let chapter = 1; chapter <= titleQuantity; chapter++) {
             document.write(`<h1>Заголовок ${chapter}</h1>`)
-            let paragraphNumber = 0
-            for (let paragraph = 0; paragraph < chapter; paragraph++) {
-                document.write(`<p>Розділ ${chapter}, параграф ${++paragraphNumber}</p>`)
+            for (let paragraph = 1; paragraph <= chapter; paragraph++) {
+                document.write(`<p>Розділ ${chapter}, параграф ${paragraph}</p>`)
             }
+            document.write('<hr>');
         }
     </script>
 </body>

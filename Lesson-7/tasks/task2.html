@@ -14,19 +14,24 @@
     <a href="./task2.html">Ще раз</a>
     <a href="./task3.html">Далі</a>
     <h2>Відповідь:</h2>
-    <label for=""></label>
     <script>
         // Аргументи
 
-        // let productNumber = 0
         
-        // Обчислення        
+        // Обчислення
+        
+        document.write('<ul>');
             
-        for (let productNumber = 1; productNumber <= 10; productNumber++) {
-
-            // Вивод даних
-            document.write(`<label>Product #${productNumber} <input type="number"></label>`)
+        for (let productQuantity = 0; productQuantity < 10; productQuantity++) {
+            let productNumber = 0
+            document.write(`<li>Product #${++productNumber} <input type="text"></li>`)
         }
+
+        document.write('</ul>');
+
+        // Вивод даних
+
+
 
     </script>
 </body>
