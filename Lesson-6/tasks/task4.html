@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 4</h1>
-    
+    <h1>Задача 9</h1>
+    <p>На складі зберігається певна кількість ящиків з яблуками (наприклад, 15). Коли під’їде машина для завантаження, попросити користувача ввести, скільки ящиків завантажити у першу машину, у другу і т. д., поки на складі не закінчаться ящики з яблуками. Передбачити той випадок, коли користувач вводить кількість, що перевищує поточну кількість ящиків на складі.</p>
     <a href="./task3.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task4.html">Ще раз</a>
@@ -17,13 +17,27 @@
     <script>
         // Аргументи
 
-
-
+        let boxesInStock = 15, boxesPerCar, carsNumber = 0;
+        
         // Обчислення
-
-
-
+        
+        do {
+            carsNumber++;
+            boxesPerCar = parseInt(prompt(`Cкільки ящиків завантажити у ${carsNumber}-у машину? (Залишилось ${boxesInStock})`,'6'));
+            if (boxesInStock < boxesPerCar) {
+                alert('Введіть доступну кількість') 
+                boxesPerCar = 0
+                carsNumber--
+            }            
+            boxesInStock = boxesInStock - boxesPerCar;
+        } 
+        
         // Вивод даних
+
+        while (boxesInStock > 0){
+            document.write(`<p>${carsNumber} машин завантажено. Ящики з яблуками закінчились.</p>`);
+        }
+
 
 
 
