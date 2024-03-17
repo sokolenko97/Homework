@@ -9,7 +9,13 @@
 </head>
 <body>
     <h1>Задача 5</h1>
-    
+    <p>Створити окремі функції, які переводять:
+        <ol class="inner">
+            <li>Сантиметри у дюйми</li>
+            <li>Кілограми у фунти</li>
+            <li>Кілометри у милі</li>
+        </ol> 
+        </p>
     <a href="./task4.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task5.html">Ще раз</a>
@@ -18,13 +24,33 @@
     <script>
         // Аргументи
         
+        const centimetersValue = parseFloat(prompt('Введіть сантиметри','75'));
+        const kilogramsValue = parseFloat(prompt('Введіть кілограми','2'));
+        const kilometersValue = parseFloat(prompt('Введіть Кілометри','1'));
 
+        let centimToInches = getInchesFromCentimeters(centimetersValue);
+        let kilogramsToPounds = getPoundsFromKg(kilogramsValue);
+        let kilometersToMiles = getMilesFromKilometers(kilometersValue);
+        
         // Обчислення
         
+        function getInchesFromCentimeters(centimetersValue) {
+            return centimetersValue / 2.54;
+        };
+
+        function getPoundsFromKg(kilogramsValue) {
+            return kilogramsValue * 2.2;
+        };
+
+        function getMilesFromKilometers(kilometersValue) {
+            return kilometersValue / 1.6;
+        };
 
         // Вивод даних
 
-
+        document.write(`<p>${centimetersValue} см = ${centimToInches.toFixed(1)} дюймів <br> 
+        ${kilogramsValue} кг = ${kilogramsToPounds.toFixed(1)} фунтів <br>
+        ${kilometersValue} км = ${kilometersToMiles.toFixed(1)} милей <br></p>`);
 
     </script>
 </body>

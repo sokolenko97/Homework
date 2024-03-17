@@ -5,28 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 7</title>
     <link rel="stylesheet" href="../css/task.css">
-
+    <style>
+        img{
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
     <h1>Задача 7</h1>
-    
+    <p>Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію)</p></a>
     <a href="./task6.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task7.html">Ще раз</a>
-    <a href="./task1.html">Далі</a>
+    <a href="./task8.html">Далі</a>
     <h2>Відповідь:</h2>
+    <img src="">
     <script>
         // Аргументи
 
-
+        const firstImage = 'https://miro.medium.com/v2/resize:fit:1360/0*GtnVfAO9CoCM_3sY.jpg'
+        const secondImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIDLQSyPSaNsbJ7EFl5glcx8ye__-fLqDDNDlI64BOow&s'
+        const thirdImage = 'https://www.freecodecamp.org/news/content/images/2019/07/this-is-javascript.jpeg'
+        const forthImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQIXIGDVqBB2P50g9Omn5_s-E21nxgbkUhX-8CLex7X7ASmJaa8YqyTXpcLM3OonjBG60&usqp=CAU'
 
         // Обчислення
 
+        function getRandomImage(firstImage,secondImage,thirdImage,forthImage) {
+            const firstImageNumber = 1;
+            const lastImageNumber = 4;
+            const randomImageNumber = firstImageNumber + Math.floor(Math.random()*lastImageNumber);
 
+            switch (randomImageNumber) {
+                case 1: 
+                    imageToDisplay = firstImage
+                    break;
+                case 2: 
+                    imageToDisplay = secondImage
+                    break;
+                case 3: 
+                    imageToDisplay = thirdImage
+                    break;
+                case 4: 
+                    imageToDisplay = forthImage
+                    break;
+            }
+            return imageToDisplay
+        }
 
         // Вивод даних
-
-
+    
+        document.write(`<img src="${getRandomImage(firstImage,secondImage,thirdImage,forthImage)}">`)
 
     </script>
 </body>

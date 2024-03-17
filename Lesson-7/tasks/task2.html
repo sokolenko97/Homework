@@ -3,27 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 2</title>
+    <title>Task 1</title>
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 2</h1>
-        <p>Задача 2. Створити 10 елементів для введення цін продуктів</p> 
+    <h1>Задача 1</h1>
+    <p>Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+    </p>    
     <a href="./task1.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task2.html">Ще раз</a>
     <a href="./task3.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
-        // Аргументи
 
-        
-        // Обчислення
-
-
+        do{                 
+           userDayNumber = parseInt(prompt('Введіть номер дня від 1 до 7','0'));
+        }
+        while (userDayNumber > 7 || userDayNumber <= 0) {
+            
+        function getDayType(userDayNumber) {
+                if (userDayNumber <= 5 && userDayNumber > 0) {
+                    dayType = 'Робочий день';
+                }
+                else {
+                    dayType = 'Вихідний день';
+                }
+                return dayType;
+            }
+        }
         // Вивод даних
 
+        document.write(`<h3>${getDayType(userDayNumber)}</h3>`);
 
+// =================================================================================================
+
+// Попередній варіант
+
+        //  // Аргументи
+
+        // let userDayNumber = parseInt(prompt('Введіть номер дня','6'));
+        
+        // // Обчислення
+        
+        // function getDayType() {
+        //     let dayType;
+        //     if (userDayNumber <= 5) {
+        //         dayType = 'Робочий день'
+        //     }
+        //     else if (userDayNumber <= 7){
+        //         dayType = 'Вихідний день'
+        //     }
+        //     else{
+        //         dayType = 'Введіть коректне значення'
+        //     };
+        //     return dayType;
+        // }
+
+        // dayTypeResult = getDayType();
+
+        // // Вивод даних
+
+        // document.write(`<h3>${userDayNumber}-й день - ${dayTypeResult}</h3>`);
 
     </script>
 </body>

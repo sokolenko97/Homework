@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 4</title>
+    <title>Task 3</title>
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 4</h1>
-    
+    <h1>Задача 3</h1>
+    <p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.</p></a>
     <a href="./task3.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task4.html">Ще раз</a>
@@ -18,14 +18,32 @@
         // Аргументи
 
 
-
+        
         // Обчислення
 
+        function getExpressionsResult(...numbers) {
+            let evenNumbersCount = 0;
+            let positiiveNumbersCount = 0;
+            let overHundredNumbersCount = 0;
+            for (let numberCheck = 0; numberCheck < 3; numberCheck++) {
+                if(numbers[numberCheck] % 2 === 0)
+                evenNumbersCount++
+            }
+            for (let numberCheck = 0; numberCheck < 3; numberCheck++) {
+                if(numbers[numberCheck] > 0)
+                positiiveNumbersCount++
+            }
+            for (let numberCheck = 0; numberCheck < 3; numberCheck++) {
+                if(numbers[numberCheck] > 100)
+                overHundredNumbersCount++
+            }
+            return document.write(`<p>Кількість парних: ${evenNumbersCount} <br> Кількість додатних: ${positiiveNumbersCount} <br> Кількість більших за 100: ${overHundredNumbersCount}</p>`);
+            // Знаю що не бажано так виводити, але це здається найпростішим рішенням щоб з однієї функції декілька результатів взяти
+        };
 
-
+        getExpressionsResult(300,-5,8);
+        
         // Вивод даних
-
-
 
     </script>
 </body>

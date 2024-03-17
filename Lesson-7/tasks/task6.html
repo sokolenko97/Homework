@@ -5,27 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 6</title>
     <link rel="stylesheet" href="../css/task.css">
-
+    <style>
+        table{
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Задача 6</h1>
-    
+    <p>Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).</p></a>
     <a href="./task5.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task6.html">Ще раз</a>
     <a href="./task7.html">Далі</a>
     <h2>Відповідь:</h2>
+    <table>
+
+    </table>
     <script>
         // Аргументи
-
-
+        
+        const tableRowsNumber = parseInt(prompt('Введіть кількість рядків таблиці','15'))
+        const tableColumnsNumber = parseInt(prompt('Введіть кількість стовпців таблиці','20'))
 
         // Обчислення
-
+        function getTable(tableRowsNumber,tableColumnsNumber) {
+            let cellNumber = 0
+            document.write('<table border="2px">')
+            for (let column = 0; column < tableColumnsNumber; column++) {
+                document.write('<tr>')
+                for (let row = 0; row < tableRowsNumber; row++) {
+                    document.write(`<td>${++cellNumber}</td>`)
+                }
+                document.write('</tr>')            
+            }
+            document.write('</table>')
+        }
 
 
         // Вивод даних
-
+        getTable(tableRowsNumber,tableColumnsNumber)
 
 
     </script>

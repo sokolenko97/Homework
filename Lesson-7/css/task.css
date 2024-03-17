@@ -26,6 +26,11 @@ a{
 
 li{
     text-align: left;
+    font-weight: bold;
+}
+ol{
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 a:hover{

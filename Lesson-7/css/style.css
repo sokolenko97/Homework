@@ -62,3 +62,12 @@ a{
     text-decoration: none;
     min-height: 100%;
 }
+
+.inner{
+    li{
+        outline: none;
+        color: darkblue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}

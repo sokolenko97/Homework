@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 3</h1>
-    
+    <h1>Задача 2</h1>
+    <p> Створити окремі функції, які для 4 чисел знаходять:
+        <ol class="inner">
+            <li>суму</li>
+            <li>добуток</li>
+            <li>середнє арифметичне</li>
+            <li>мінімальне значення</li>
+        </ol>                 
+    </p>
     <a href="./task2.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task3.html">Ще раз</a>
@@ -17,16 +24,34 @@
     <script>
         // Аргументи
 
-
+        const firstNumber = parseFloat(prompt('Введіть перше число','1'));
+        const secondNumber = parseFloat(prompt('Введіть друге число','2'));
+        const thirdNumber = parseFloat(prompt('Введіть третє число','2'));
+        const fourthNumber = parseFloat(prompt('Введіть четверте число','3'));
 
         // Обчислення
 
+        function getNumbersSum(firstNumber, secondNumber, thirdNumber, fourthNumber) {
+            return firstNumber + secondNumber + thirdNumber + fourthNumber;
+        };
+        function getNumbersMultiply(firstNumber, secondNumber, thirdNumber, fourthNumber) {
+            return firstNumber * secondNumber * thirdNumber * fourthNumber;
+        };
+        function getAverageValue(firstNumber, secondNumber, thirdNumber, fourthNumber) {
+            return (firstNumber + secondNumber + thirdNumber + fourthNumber)/4;
+        };
+        function getMinimumValue(firstNumber, secondNumber, thirdNumber, fourthNumber) {
+            return Math.min(firstNumber, secondNumber, thirdNumber, fourthNumber);
+        };
 
-
+        let sumResult = getNumbersSum(firstNumber, secondNumber, thirdNumber, fourthNumber);
+        let multiplyResult = getNumbersMultiply(firstNumber, secondNumber, thirdNumber, fourthNumber);
+        let averageValue = getAverageValue(firstNumber, secondNumber, thirdNumber, fourthNumber);
+        let minimumValue = getMinimumValue(firstNumber, secondNumber, thirdNumber, fourthNumber)
+        
         // Вивод даних
 
-
-
+        document.write(`<p>Сума - ${sumResult} <br> Добуток - ${multiplyResult} <br> Cереднє арифметичне - ${averageValue} <br> Мінімальне значення - ${minimumValue}</p>`);
     </script>
 </body>
 </html>

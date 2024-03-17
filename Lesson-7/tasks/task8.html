@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <link rel="stylesheet" href="../css/task.css">
+    <style>
+        .link{
+            background-color:bisque;
+        }
+        img{
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 8</h1>
+    <p>Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a</p>
+    <a href="./task7.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task8.html">Ще раз</a>
+    <a href="./task9.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+
+        // Обчислення
+
+        function showBanner(image, title, URL) {
+            document.write(`<a class="link" href=${URL} target="_blank">
+                <h1>${title}</h1>
+        <img src=${image}> </a>`)
+        }
+
+        // Вивод даних
+
+        showBanner('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png', "Don't click!", 'https://youtu.be/6cKoB5ijaGA?si=Iwd59Ojnqml6CAEI')
+
+    </script>
+</body>
+</html>

@@ -3,25 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1</title>
+    <title>Task 6</title>
     <link rel="stylesheet" href="../css/task.css">
+
 </head>
 <body>
-    <h1>Задача 0</h1>
-    <div class="task">
-        <p>  Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.</p>  
-    </div>
-    <a href="./task7.html">Назад</a>
+    <h1>Задача 1</h1>
+    <p> Створити функцію, яка за номером місяця повертає його назву.</p></a>
+    <a href="./task0.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task1.html">Ще раз</a>
     <a href="./task2.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
         // Аргументи
+
+        let userMonthNumber = parseInt(prompt('Введіть номер місяця','3'));
         
+        // Обчислення
+        
+        function getSeasonByMonth(userMonthNumber) {
+            let month
+            switch (userMonthNumber) {
+            case 1:
+                month = 'Січень';               
+                break;
+            case 2:
+                month = 'Лютий';               
+                break;
+            case 3:
+                month = 'Березень';               
+                break;
+            case 4:
+                month = 'Квітень';               
+                break;
+            case 5:
+                month = 'Травень';               
+                break;
+            case 6:
+                month = 'Червень';               
+                break;
+            case 7:
+                month = 'Липень';               
+                break;
+            case 8:
+                month = 'Серпень';               
+                break;
+            case 9:
+                month = 'Вересень';               
+                break;
+            case 10:
+                month = 'Жовтень';               
+                break;
+            case 11:
+                month = 'Листопад';               
+                break;
+            case 12:
+                month = 'Грудень';               
+                break;        
+            default: 
+                month = 'Нажаль, є тільки 12 місяців :('
+                break;
+            }
+            return month
+        }
+        // Вивод даних
 
-        // Обчислення та Вивод даних
-
+        document.write(`<h3>${userMonthNumber}-й місяць - ${getSeasonByMonth(userMonthNumber)}</h3>`);
 
     </script>
 </body>

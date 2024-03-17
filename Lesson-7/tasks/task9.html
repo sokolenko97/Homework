@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <link rel="stylesheet" href="../css/task.css">
+
+</head>
+<body>
+    <h1>Задача 9</h1>
+    <p>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість від’ємних показів температури.</p>
+    <a href="./task8.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task9.html">Ще раз</a>
+    <a href="./task10.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+        // Обчислення
+
+        function calcNegativeTemperature(...temperatures) {
+            let negativeTemperatureNumber = 0
+            for (let temperatureCheck = 0; temperatureCheck < temperatures.length; temperatureCheck++) {
+                if(temperatures[temperatureCheck]<0) 
+                negativeTemperatureNumber++
+            }
+            return negativeTemperatureNumber
+        }
+
+        
+        // Вивод даних
+        
+        document.write(`${calcNegativeTemperature(0, 2, -13, 31, 45, -21, -3)} від’ємних значення температури`)
+
+
+    </script>
+</body>
+</html>

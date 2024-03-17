@@ -22,7 +22,7 @@
         document.write(`<div style="text-align: left;">`);
         for (let rows = 0; rows < 7; rows++) {
             let symbolO = '';
-            for (let cols = 0; cols < rows; cols++) {
+            for (let cols = 0; cols <= rows; cols++) {
                 symbolO += 'o';
             };
             document.write(`${symbolO} </br>`);
@@ -30,7 +30,7 @@
         document.write(`</div>`);
         for (let rows = 0; rows < 7; rows++) {
             let symbolO = '';
-            for (let cols = 0; cols < rows; cols++) {
+            for (let cols = 0; cols <= rows; cols++) {
                 symbolO += 'o';
             };
             document.write(`${symbolO} </br>`);
