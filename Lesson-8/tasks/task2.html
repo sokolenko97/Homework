@@ -91,10 +91,10 @@
 
         // Вивод даних
 
-        document.write(`Кількість відвідувачів кожен день - ${visitorsNumberPerDay}<br>
+        document.write(`Кількість відвідувачів кожен день - <strong>${visitorsNumberPerDay}</strong> <br>
         Номери днів, протягом яких кількість відвідувачів була меншою за 20: <strong>${getDaysWithLessThan20Visitors(visitorsNumberPerDay)}</strong> <br>
-        Номери днів, коли кількість відвідувачів була мінімальною: ${daysWithMinVisitors(visitorsNumberPerDay)} <br>
-        Номери днів, коли кількість відвідувачів була мінімальною: ${daysWithMaxVisitors(visitorsNumberPerDay)} <br>
+        Номери днів, коли кількість відвідувачів була мінімальною: <strong>${daysWithMinVisitors(visitorsNumberPerDay)}</strong> <br>
+        Номери днів, коли кількість відвідувачів була максимальною: <strong>${daysWithMaxVisitors(visitorsNumberPerDay)}</strong> <br>
         Загальну кількість клієнтів у робочі дні: <strong>${visitorsTotalOnWeekends(visitorsNumberPerDay)}</strong> <br>
         Загальну кількість днів на вихідних: <strong>${visitorsTotalOnWorkDay(visitorsNumberPerDay)}</strong> <br>`)
 
