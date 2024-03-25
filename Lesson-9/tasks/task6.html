@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Задача 6</h1>
-    
+    <p>Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2</p>
     <a href="./task5.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task6.html">Ще раз</a>
@@ -18,15 +18,25 @@
     <script>
         // Аргументи
 
-        const arrayMethods = ['.fill', 'for of', '.forEach', 'from', 'map', 'at', 'push', 'pop', 'length', 'unshift', 'shift', 'splice', 'delete', 'slice', 'reduce', 'reduceRight', 'filter', 'every', 'some', ' includes', 'sort', 'find']
-
+        const numbers = [1, -170, -60, 9, -205, -1004, 5, 2, -109]
 
         // Обчислення
 
+        let multiplyResult = numbers.reduce((prev,
+            el) => {
+            (el>numbers[0])
+               return el * 2
+            }
+        )
+
+        // const biggerNumbers = numbers.filter(el => el > numbers[0])
+        // const multiplyResult = biggerNumbers.map (el => el * 2)
 
 
         // Вивод даних
 
+
+        document.write(multiplyResult)
 
 
     </script>

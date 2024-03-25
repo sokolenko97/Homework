@@ -7,22 +7,52 @@
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 0</h1>
+    <h1>Задача 1</h1>
+    <p>
+        Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+      </p>
     <div class="task">
-        <p>  Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.</p>  
     </div>
-    <a href="./task7.html">Назад</a>
+    <a href="./task5.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task1.html">Ще раз</a>
     <a href="./task2.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
-        // Аргументи
         
 
-        // Обчислення та Вивод даних
+        const cellsNumber = new Array(parseInt(prompt('Введіть кількість клітинок', '5'))).fill(0) // Пробував завернути ці константи у функцію, але не вийшло потім їх легко використати у функціях нижче 
+        const shipNumber = parseInt(prompt('Введіть одиночних кораблів', '2'))
 
+        function createShipRandomLocations(cellsNumber) {
+            const firstCell = 0
+            const lastCell = cellsNumber.length
+            for (let addShip = 0; addShip < shipNumber; addShip++) {
+                const selectRandomCellNumber = firstCell + Math.floor(Math.random () * lastCell)
+                cellsNumber[selectRandomCellNumber] = 1
+            }
+            return cellsNumber
+        }
 
+        createShipRandomLocations(cellsNumber)
+
+        function takeAShot(cellsNumber) {
+            let shipCheck
+            let cellShot
+            do{
+            shipCheck = cellsNumber.every(el => el === 0)
+                if (shipCheck !== true) { // щоб цикл не питав користувача зайвий раз
+                    cellShot = parseInt(prompt('Введіть номер клітинки, куди стріляти', '2'))-1
+                    if (cellsNumber[cellShot] === 1) // щоб не додавало елементи до масиву якщо користувач введе число більше за кількість клітинок
+                    cellsNumber[cellShot] = 0
+                }
+            }
+            while (shipCheck === false)
+        }
+
+        takeAShot(cellsNumber)
+
+        document.write('<p>Всі кораблі потопплені!</p>')
     </script>
 </body>
 </html>

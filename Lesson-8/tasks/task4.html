@@ -8,7 +8,13 @@
 </head>
 <body>
     <h1>Задача 4</h1>
-    
+    <p>Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які:
+        <ul>
+          <li>починаються на букву «А»;</li>
+          <li>перша і остання літери співпадають;</li>
+          <li>складаються з більше ніш 5 символів;</li> 
+        </ul>
+      </p>
     <a href="./task3.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task4.html">Ще раз</a>
@@ -17,14 +23,30 @@
     <script>
         // Аргументи
 
-
+        let autoNumbersList = ['A12A', 'XYZ567B', 'DEF9D', 'G4HD', 'AKL78E', 'M3NF', 'AQR67G', 'STU012H', 'V5WI', 'YZA89J']
 
         // Обчислення
 
-
+        function getSpecificAutoNumbers(autoNumbersList) {
+            let numbersWithFirstLetterACount = 0
+            let numbersWithSameEdgeLetters = 0
+            let numbersWithMoreThanLetters = 0
+            for (let number = 0; number < autoNumbersList.length; number++) {
+                if (autoNumbersList[number][0] === 'A')
+                numbersWithFirstLetterACount++
+                if (autoNumbersList[number][0] === autoNumbersList[number].at(-1))
+                numbersWithSameEdgeLetters++
+                if (autoNumbersList[number][5] !== undefined)
+                numbersWithMoreThanLetters++
+            }
+            return [numbersWithFirstLetterACount,numbersWithSameEdgeLetters,numbersWithMoreThanLetters]
+        }
 
         // Вивод даних
 
+        document.write(`<p> Номерів які починаються на букву «А» - ${getSpecificAutoNumbers(autoNumbersList)[0]} <br> 
+        Номерів де перша і остання літери співпадають - ${getSpecificAutoNumbers(autoNumbersList)[1]} <br>  
+        Номерів що складаються з більше ніш 5 символів - ${getSpecificAutoNumbers(autoNumbersList)[2]}</p>`)
 
 
     </script>

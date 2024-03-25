@@ -9,22 +9,45 @@
 </head>
 <body>
     <h1>Задача 5</h1>
-    
+    <p>Дано послідовність оцінок учня. Підрахувати кількість:
+        <ul>
+          <li>двійок</li>
+          <li>кількість хороших оцінок (добре, відмінно);</li>
+          <li>кількість оцінок, які нижче середнього.</li>
+        </ul>
     <a href="./task4.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task5.html">Ще раз</a>
-    <a href="./task6.html">Далі</a>
+    <a href="./task1.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
         // Аргументи
         
+        const scores = [3,4,1,2,3,5,4,5,3,4,5,5]
 
         // Обчислення
-        
+
+        function getScores(scores) {
+            let badScores = 0
+            let goodScores = 0
+            let medioreScores = 0
+            for (let score = 0; score < scores.length; score++) {
+                if (scores[score] <= 2)  
+                badScores++      
+                if (scores[score] >= 4)  
+                goodScores++   
+                if (scores[score] > 4)  
+                medioreScores++        
+            }
+            return [badScores,goodScores,medioreScores]
+        }
 
         // Вивод даних
 
-
+        document.write(`<p> Двійок - ${getScores(scores)[0]} <br>
+            Кількість хороших оцінок - ${getScores(scores)[1]} <br>
+            Кількість оцінок, які нижче середнього - ${getScores(scores)[2]}
+        </p>`)
 
     </script>
 </body>

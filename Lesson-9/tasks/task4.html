@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 4</h1>
+    <p>Дано масив елементів. Вивести на екран елементи, що більші за 100</p>
+    <a href="./task3.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task4.html">Ще раз</a>
+    <a href="./task5.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+
+        const numbers = [104, 170, 60, 99, 205, 1004, 50, 25, 109]
+
+        function getNumbersMoreThan100(numbers) {
+            let numbersMoreThan100 = []
+            for (const moreThan100 of numbers) {
+                if (moreThan100>100)
+                numbersMoreThan100.push(moreThan100)
+            }
+            return numbersMoreThan100
+        }
+
+        document.write(getNumbersMoreThan100(numbers))
+
+    </script>
+</body>
+</html>

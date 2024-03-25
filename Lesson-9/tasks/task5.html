@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <link rel="stylesheet" href="../css/task.css">
+
+</head>
+<body>
+    <h1>Задача 5</h1>
+    <p>Дано масив елементів. Знайти добуток додатних елементів</p>
+    <a href="./task4.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task5.html">Ще раз</a>
+    <a href="./task6.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+        
+        const numbers = [1, -170, -60, 9, -205, -1004, 5, 2, -109]
+
+// варіант з reduce
+        // const  positiveNum = []
+        // const multiplyResult = positiveNum.reduce(
+        //     (prevMultiply, el) => prevMultiply*el)
+
+        // Обчислення
+
+        let multiplyResult = 1
+        for (const each of numbers) {
+            if (each > 0) 
+            multiplyResult = multiplyResult * each
+        
+            // positiveNum.push(each) варіант з reduce
+        }
+        
+
+        // Вивод даних
+
+        document.write(multiplyResult)
+
+
+    </script>
+</body>
+</html>

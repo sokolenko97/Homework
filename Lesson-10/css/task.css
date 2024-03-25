@@ -1,0 +1,48 @@
+body{
+    background-color: bisque;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+p{
+    font-weight: 700;
+    line-height: 150%;
+    margin: 0 auto 30px;
+}
+h1{
+    color:brown;
+    font-size: 20px;
+}
+a{
+    display: inline-block;
+    background-color:brown;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: transform 0.2s;
+
+}
+
+li{
+    text-align: left;
+}
+
+a:hover{
+    transform: scale(1.05);
+}
+@media (min-width:992px){
+    p{
+        font-size: 25px;
+        max-width: 50%;
+    }
+    h3{
+    font-size: 25px;
+    }
+    h1{
+        font-size: 32px;
+    }
+    body{
+        font-size: 20px;
+    }
+}

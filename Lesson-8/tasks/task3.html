@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Задача 3</h1>
-    
+    <p>Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
     <a href="./task2.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task3.html">Ще раз</a>
@@ -17,15 +17,21 @@
     <script>
         // Аргументи
 
-
+        let studentsNames = ['Наталя','Віктор','Іван','Олександр','Ігор','Іван','Андрій','Іван']
 
         // Обчислення
 
-
+        function calcIvanNamesCount(studentsNames) {
+            let ivanNamesCount = 0
+            for (let name = 0; name < studentsNames.length; name++) {
+                if (studentsNames[name] === 'Іван') ivanNamesCount++          
+            }
+            return ivanNamesCount
+        }
 
         // Вивод даних
 
-
+        document.write(`<p>Іван зустрічається разів ${calcIvanNamesCount(studentsNames)}</p>`)
 
     </script>
 </body>
