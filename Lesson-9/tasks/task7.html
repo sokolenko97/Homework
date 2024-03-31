@@ -9,24 +9,29 @@
 </head>
 <body>
     <h1>Задача 7</h1>
-    
+    <p>Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.</p>
+</a>
     <a href="./task6.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task7.html">Ще раз</a>
-    <a href="./task1.html">Далі</a>
+    <a href="./task8.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
         // Аргументи
 
-
+        const prices = [100, 200, 300, 400, 500, 1200, 1500, 2000, 2500, 3000]
+        const discount30percent = 0.3
 
         // Обчислення
 
-
+        prices.forEach((price, index, basePrices) => {
+            if (price>1000)
+            basePrices[index] -= price*discount30percent
+        })
 
         // Вивод даних
 
-
+        document.write(prices)
 
     </script>
 </body>

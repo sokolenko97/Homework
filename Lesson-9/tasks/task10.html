@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+    <link rel="stylesheet" href="../css/task.css">
+
+</head>
+<body>
+    <h1>Задача 10</h1>
+    <p> Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.</p>
+    <a href="./task9.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task10.html">Ще раз</a>
+    <a href="./task1.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+        // Аргументи
+
+        const prices = [100, 200, 300, 400, 500, 1200, 1500, 2000, 2500, 3000]
+        const VAT20percent = 0.2
+
+        // Обчислення
+
+        const VATamount = prices.map(
+            (price,index,baseArr) => price*VAT20percent
+        )
+
+
+        // Вивод даних
+
+        document.write(VATamount)
+
+    </script>
+</body>
+</html>

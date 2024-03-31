@@ -20,23 +20,16 @@
 
         const numbers = [1, -170, -60, 9, -205, -1004, 5, 2, -109]
 
+        document.write(`${numbers}<br>`)
+
         // Обчислення
 
-        let multiplyResult = numbers.reduce((prev,
-            el) => {
-            (el>numbers[0])
-               return el * 2
-            }
-        )
-
-        // const biggerNumbers = numbers.filter(el => el > numbers[0])
-        // const multiplyResult = biggerNumbers.map (el => el * 2)
-
+        numbers.forEach((el, index, array) => {if (el > array[0]) array[index]*=2})
 
         // Вивод даних
 
 
-        document.write(multiplyResult)
+        document.write(numbers)
 
 
     </script>
