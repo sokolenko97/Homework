@@ -3,25 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1</title>
+    <title>Task</title>
     <link rel="stylesheet" href="../css/task.css">
 </head>
 <body>
-    <h1>Задача 0</h1>
-    <div class="task">
-    </div>
-    <a href="./task5.html">Назад</a>
+    <h1>Задача</h1>
+    <p>Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)</p>
+    <!-- <a href="./task5.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task1.html">Ще раз</a>
-    <a href="./task2.html">Далі</a>
-    <h2>Відповідь:</h2>
-    <script>
-        // Аргументи
-        
+    <a href="./task2.html">Далі</a> -->
+    <ol>
+        <li>Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.</li>
+        <script>
+            function generatePriceHistory(minPrice=1,maxPrice=10000) {
+                let randomPrices = []
+                let generatePrice
+                for (let prices = 0; prices < 10; prices++) {
+                    generatePrice = minPrice + Math.floor(Math.random()*(maxPrice-minPrice+1))
+                    randomPrices.push(generatePrice)
+                }
+                return randomPrices
+            }
 
-        // Обчислення та Вивод даних
+            function getPricesMoreThan1000(generatePriceHistory) {
+                return generatePriceHistory().filter (
+                    (price => price > 1000)
+                )
+            }
 
+            document.write(getPricesMoreThan1000(generatePriceHistory))
+        </script>
+        <li>Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.</li>
+        <script>
+            function getPricesIndexMoreThan1000(generatePriceHistory) {
+                let indexes = []
+                generatePriceHistory().filter (
+                    ((price,ind,arr) => {
+                        if (price > 1000)
+                        indexes.push(ind+1)
+                    })
+                )
+                return indexes
+            }  
+            document.write(getPricesIndexMoreThan1000(generatePriceHistory))              
+        </script>
+        <li>Сформувати список з тих цін, які більші за попереднє значення</li>
+        <script>
+            
+        </script>
+    </ol>
 
-    </script>
 </body>
 </html>
