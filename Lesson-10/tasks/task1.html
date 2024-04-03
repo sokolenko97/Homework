@@ -50,7 +50,129 @@
         </script>
         <li>Сформувати список з тих цін, які більші за попереднє значення</li>
         <script>
-            
+            function getGreaterPricesList(generatePriceHistory) {
+                let pricesGreaterThanPrevValue = generatePriceHistory().reduce(
+                    (prevValue,price,ind,arr)=> 
+                    {if (price>arr[ind-1] && ind > 0) prevValue.push(ind)
+                        return prevValue}
+                        ,[])
+                return pricesGreaterThanPrevValue
+            }
+            document.write(getGreaterPricesList(generatePriceHistory))
+        </script>
+        <li>Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального</li>
+        <script>
+            function getPricePercentageOfMax(generatePriceHistory) {
+                let maxPrice = Math.max(...generatePriceHistory())
+                let calcPecentageOfMax = 100/maxPrice
+                let pricesGreaterThanPrevValue = generatePriceHistory().map(
+                    (price)=>price*calcPecentageOfMax
+                )
+                return pricesGreaterThanPrevValue
+            }
+
+            function floorResult(getPricePercentageOfMax) {
+                let result = getPricePercentageOfMax(generatePriceHistory).map(
+                    (price)=>Math.floor(price)
+                )
+                return result
+            }
+            document.write(floorResult(getPricePercentageOfMax))
+        </script>
+        <li>Підрахувати кількість змін цін</li>
+        <script>
+            function calcPriceChanges(generatePriceHistory) {
+                let priceChangesCount = generatePriceHistory().reduce(
+                    (prevPrice,price,ind,baseArr)=> price !== prevPrice ? prevPrice+=1:prevPrice
+                    , 0
+                )
+                return priceChangesCount
+            }
+            document.write(calcPriceChanges(generatePriceHistory))
+        </script>
+        <li>Визначити, чи є ціна, що менше 1000</li>
+        <script>
+            function checkPriceLowerThan1000(generatePriceHistory) {
+                let priceLowerThan1000 = generatePriceHistory().some(
+                    el => el < 1000
+                )
+                return priceLowerThan1000
+            }
+            document.write(checkPriceLowerThan1000(generatePriceHistory))
+        </script>
+        <li>Визначати, чи усі ціни більше за 1000</li>
+        <script>
+            function checkIfAllPricesHigherThan1000(generatePriceHistory) {
+                let areAllPricesHigherThan1000 = generatePriceHistory().every(
+                    el => el > 1000
+                )
+                return areAllPricesHigherThan1000
+            }
+            document.write(checkIfAllPricesHigherThan1000(generatePriceHistory))
+        </script>
+        <li>Підрахувати кількість цін, що більше за 1000</li>
+        <script>
+            function calcPricesHigherThan1000Count(generatePriceHistory) {
+                let pricesHigherThan1000Count = generatePriceHistory().reduce(
+                    (prevPrice, price)=> price > 1000 ? prevPrice + 1:prevPrice,0
+                )
+                return pricesHigherThan1000Count
+            }
+            document.write(calcPricesHigherThan1000Count(generatePriceHistory))
+        </script>
+        <li>Підрахувати суму цін, що більше за 1000</li>
+        <script>
+            function calcPricesHigherThan1000Sum(generatePriceHistory) {
+                let pricesHigherThan1000Sum = generatePriceHistory().reduce(
+                    (prevPrice, price)=> price > 1000 ? prevPrice + price:prevPrice,0
+                )
+                return pricesHigherThan1000Sum
+            }
+            document.write(calcPricesHigherThan1000Sum(generatePriceHistory))
+        </script>
+        <li>Знайти першу ціну, що більше за 1000
+        </li>
+        <script>
+            function findFirstPriceHigherThan1000(generatePriceHistory) {
+                let firstPriceHigherThan1000 = generatePriceHistory().find(
+                    el => el >1000
+                )
+                return firstPriceHigherThan1000
+            }
+            document.write(findFirstPriceHigherThan1000(generatePriceHistory))
+        </script>
+        <li>Знайти індекс першої ціни, що більше за 1000
+        </li>
+        <script>
+            function findIndexFirstPriceHigherThan1000(generatePriceHistory) {
+                let firstIndexPriceHigherThan1000 = generatePriceHistory().findIndex(
+                    el => el >1000
+                )
+                return firstIndexPriceHigherThan1000
+            }
+            document.write(findIndexFirstPriceHigherThan1000(generatePriceHistory))
+        </script>
+        <li>Знайти останню ціну, що більше за 1000
+        </li>
+        <script>
+            function findLastPriceHigherThan1000(generatePriceHistory) {
+                let lastPriceHigherThan1000 = generatePriceHistory().findLast(
+                    el => el >1000
+                )
+                return lastPriceHigherThan1000
+            }
+            document.write(findLastPriceHigherThan1000(generatePriceHistory))
+        </script>
+        <li>Знайти індекс останньої ціни, що більше за 1000
+        </li>
+        <script>
+            function findIndexLastPriceHigherThan1000(generatePriceHistory) {
+                let lastIndexPriceHigherThan1000 = generatePriceHistory().findLastIndex(
+                    el => el >1000
+                )
+                return lastIndexPriceHigherThan1000
+            }
+            document.write(findIndexLastPriceHigherThan1000(generatePriceHistory))
         </script>
     </ol>
 

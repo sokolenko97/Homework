@@ -1,6 +1,5 @@
 body{
     background-color: bisque;
-    text-align: center;
     font-family: 'Courier New', Courier, monospace;
 }
 p{
@@ -11,6 +10,8 @@ p{
 h1{
     color:brown;
     font-size: 20px;
+    text-align: center;
+
 }
 a{
     display: inline-block;
@@ -26,6 +27,8 @@ a{
 
 li{
     text-align: left;
+    padding: 10px 0 10px;
+    font-weight: bold;
 }
 
 a:hover{

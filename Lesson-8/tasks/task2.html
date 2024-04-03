@@ -33,7 +33,7 @@
             const daysWithLessThan20Visitors = []
             for (let day = 0; day < visitorsNumberPerDay.length; day++) {
                 if (visitorsNumberPerDay[day] < 20) 
-                daysWithLessThan20Visitors.push([day+1])
+                daysWithLessThan20Visitors.push(day+1)
             }
             return daysWithLessThan20Visitors
         }
@@ -43,7 +43,7 @@
         function calcDaysWithMaxMinVisitors(mathFormula,visitorsNumberPerDay) {
             let daysWithMaxMinVisitors = mathFormula
             const dayNumber = []
-            for (let day = 0; day <= visitorsNumberPerDay.length; day++) {
+            for (let day = 0; day < visitorsNumberPerDay.length; day++) {
                 if (visitorsNumberPerDay[day] === daysWithMaxMinVisitors) dayNumber.push(day+1)
             }
             return dayNumber
@@ -54,49 +54,41 @@
         function getDaysWithMinVisitors(visitorsNumberPerDay){
             return Math.min(...visitorsNumberPerDay)
         }
-        let daysWithMinVisitors = (visitorsNumberPerDay) => calcDaysWithMaxMinVisitors(getDaysWithMinVisitors(visitorsNumberPerDay),visitorsNumberPerDay);
+        let daysWithMinVisitors = calcDaysWithMaxMinVisitors(getDaysWithMinVisitors(visitorsNumberPerDay),visitorsNumberPerDay);
 
     // максимальною
 
         function getDaysWithMaxVisitors(visitorsNumberPerDay){
             return Math.max(...visitorsNumberPerDay)
         }
-        let daysWithMaxVisitors = (visitorsNumberPerDay) => calcDaysWithMaxMinVisitors(getDaysWithMaxVisitors(visitorsNumberPerDay),visitorsNumberPerDay);
+        let daysWithMaxVisitors = calcDaysWithMaxMinVisitors(getDaysWithMaxVisitors(visitorsNumberPerDay),visitorsNumberPerDay);
         
 // загальну кількість клієнтів
 
-        function calcVisitorsTotal(givenVisitorsNumber) {
+        function calcVisitorsTotal(visitorsNumberPerDay, firstDay=0, lastDay=6) {
             let visitorsTotal = 0
-            const visitorsNumber = givenVisitorsNumber
-            for (let days = 0; days < visitorsNumber.length; days++) {
-                visitorsTotal += visitorsNumber[days]
+            for (let days = firstDay; days <= lastDay; days++) {
+                visitorsTotal += visitorsNumberPerDay[days]
             }
             return visitorsTotal
         }
 
     // на вихідних
-        
-        function getVisitorsTotalOnWeekends(visitorsNumberPerDay){
-            return visitorsNumberPerDay.slice(5)
-        }
-        let visitorsTotalOnWeekends = (visitorsNumberPerDay) => calcVisitorsTotal(getVisitorsTotalOnWeekends(visitorsNumberPerDay));
+        let visitorsTotalOnWeekends = calcVisitorsTotal(visitorsNumberPerDay, 5, 6);
 
     // у робочі дні
 
-        function getVisitorsTotalOnWorkDays(visitorsNumberPerDay){
-            return visitorsNumberPerDay.slice(0,5)
-        }
-        
-        let visitorsTotalOnWorkDay = (visitorsNumberPerDay) => calcVisitorsTotal(getVisitorsTotalOnWorkDays(visitorsNumberPerDay));
+
+        let visitorsTotalOnWorkDay = calcVisitorsTotal(visitorsNumberPerDay, 0, 4);
 
         // Вивод даних
 
         document.write(`Кількість відвідувачів кожен день - <strong>${visitorsNumberPerDay}</strong> <br>
         Номери днів, протягом яких кількість відвідувачів була меншою за 20: <strong>${getDaysWithLessThan20Visitors(visitorsNumberPerDay)}</strong> <br>
-        Номери днів, коли кількість відвідувачів була мінімальною: <strong>${daysWithMinVisitors(visitorsNumberPerDay)}</strong> <br>
-        Номери днів, коли кількість відвідувачів була максимальною: <strong>${daysWithMaxVisitors(visitorsNumberPerDay)}</strong> <br>
-        Загальну кількість клієнтів у робочі дні: <strong>${visitorsTotalOnWeekends(visitorsNumberPerDay)}</strong> <br>
-        Загальну кількість днів на вихідних: <strong>${visitorsTotalOnWorkDay(visitorsNumberPerDay)}</strong> <br>`)
+        Номери днів, коли кількість відвідувачів була мінімальною: <strong>${daysWithMinVisitors}</strong> <br>
+        Номери днів, коли кількість відвідувачів була максимальною: <strong>${daysWithMaxVisitors}</strong> <br>
+        Загальну кількість клієнтів у робочі дні: <strong>${visitorsTotalOnWorkDay}</strong> <br>
+        Загальну кількість клієнтів на вихідних: <strong>${visitorsTotalOnWeekends}</strong> <br>`)
 
     </script>
 </body>
