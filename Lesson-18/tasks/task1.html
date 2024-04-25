@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../css/task.css" />
+  </head>
+  <body>
+    <h1>Задача 1</h1>
+    <p>Розробити калькулятор</p>
+    <a href="./task5.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task1.html">Ще раз</a>
+    <a href="./task2.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+      class Calculator {
+        constructor() {
+          this.answer = document.querySelector("h2");
+          this.mainDiv = document.createElement("div");
+          this.mainDiv.className = "calculator";
+          this.answer.after(this.mainDiv);
+        }
+
+        createInput(labelText, inputName) {
+          const label = document.createElement("label");
+          label.innerText = labelText;
+          label.setAttribute("for", inputName);
+          label.style.display = "block";
+          label.style.marginBottom = "10px";
+          this.mainDiv.append(label);
+
+          const input = document.createElement("input");
+          input.setAttribute("type", "number");
+          input.setAttribute("name", inputName);
+          input.style.marginLeft = "10px";
+          label.append(input);
+        }
+        get calculateSum() {
+          const inputs = this.mainDiv.querySelectorAll('input[type="number"]');
+          let sum = inputs.reduce((prevSum, input) => {
+            return prevSum + parseFloat(input.value);
+          }, 0);
+          return sum;
+        }
+      }
+
+      const myCalculator = new Calculator();
+      myCalculator.createInput("First Number", "firstNumber");
+      myCalculator.createInput("Second Number", "secondNumber");
+      myCalculator.createInput("Результат", "result");
+
+      const sum = myCalculator.calculateSum();
+      document.write(sum);
+
+      
+
+      
+
+    </script>
+  </body>
+</html>

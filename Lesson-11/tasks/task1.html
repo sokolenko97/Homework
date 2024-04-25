@@ -8,20 +8,86 @@
 </head>
 <body>
     <h1>Задача 1</h1>
-    <div class="task">
-    </div>
+    <p>Знайти суми елементів у вказаній області</p>
     <a href="./task5.html">Назад</a>
     <a href="../index.html">На головну</a>
     <a href="./task1.html">Ще раз</a>
     <a href="./task2.html">Далі</a>
-    <h2>Відповідь:</h2>
-    <script>
-        // Аргументи
-        
+    <ol>
+        <li>номери рядків від 0 до половини, стовпці від 0 до половини
+        </li>
+        <script>
+            let numbers = [
+                [1, 2, 5, 2, 1, 2, 9, 2],
+                [1, 2, 1, 2, 1, 2, 9, 2],
+                [1, 1, 5, 2, 1, 2, 9, 2],
+                [1, 6, 5, 2, 1, 2, 9, 2],
+            ]
 
-        // Обчислення та Вивод даних
+            function getTopLeftCornerSum(numbers) {
+                let rowFirstHalf = Math.floor(numbers[0].length/2)
+                let colFirstHalf = Math.floor(numbers.length/2)
+                let sum = 0
+                for (let rowIndex = 0; rowIndex < rowFirstHalf; rowIndex++) {
+                    for (let colIndex = 0; colIndex < colFirstHalf; colIndex++) {
+                        sum += numbers[colIndex][rowIndex]
+                    }
+                }
+                return sum
+            }
 
+            document.write(getTopLeftCornerSum(numbers))
+        </script>
+        <li>номери рядків від 0 до половини, стовпці від половини до кінця
+        </li>
+        <script>
 
-    </script>
+            function getSum(arr, startRowIndex=0, endRowIndex, startColIndex=0, endColIndex, rowStep=1, colStep=1){
+                let sum = 0
+                for (let rowIndex = startRowIndex; rowIndex <= endRowIndex; rowIndex++) {
+                    for (let colIndex = startColIndex; colIndex <= endColIndex; colIndex++) {
+                        sum += numbers[rowIndex][colIndex]
+                    }                    
+                }
+                return sum
+            }
+
+            let lastRow = numbers.length-1
+            let lastCol = numbers[0].length-1
+            let rowsHalfLenght = Math.floor(numbers.length/2-1)
+            let colsHalfLenght = Math.floor(numbers[0].length/2)
+
+            let topRightCornerSum = getSum(numbers, 0, rowsHalfLenght, colsHalfLenght, lastCol)
+            document.write(topRightCornerSum)
+        </script>
+        <li>номери рядків (від половини до кінця, стовпці від 0 до половини)
+        </li>
+        <script>
+
+            let bottomLeftCornerSum = getSum(numbers, rowsHalfLenght+1, lastRow, 0, colsHalfLenght-1)
+            document.write(bottomLeftCornerSum)
+        </script>
+        <li>номери рядків від половини до кінця , стовпці від половини до кінця
+        </li>
+        <script>
+
+            let bottomRightCornerSum = getSum(numbers, rowsHalfLenght+1, lastRow, colsHalfLenght, lastCol)
+            document.write(bottomRightCornerSum)
+        </script>
+        <li>Суму парних рядків
+        </li>
+        <script>
+
+            let evenRowsSum = numbers.reduce(
+                (prevSum, el, ind, baseArr) => {
+                if (ind%2===0) prevSum+el
+                return prevSum
+                },
+                0
+            )
+            console.log(numbers);
+            document.write(evenRowsSum)
+        </script>
+    </ol>
 </body>
 </html>

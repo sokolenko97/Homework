@@ -16,10 +16,9 @@
     <ol>
         <li>Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.</li>
         <script>
-            function generatePriceHistory(minPrice=1,maxPrice=10000) {
-                let randomPrices = []
+            function generatePriceHistory(minPrice=1,maxPrice=10000, pricesQueantity=10, randomPrices=[]) {
                 let generatePrice
-                for (let prices = 0; prices < 10; prices++) {
+                for (let prices = 0; prices < pricesQueantity; prices++) {
                     generatePrice = minPrice + Math.floor(Math.random()*(maxPrice-minPrice+1))
                     randomPrices.push(generatePrice)
                 }
@@ -36,16 +35,26 @@
         </script>
         <li>Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.</li>
         <script>
+            // function getPricesIndexMoreThan1000(generatePriceHistory) {
+            //     let indexes = []
+            //     generatePriceHistory().filter (
+            //         ((price,ind,arr) => {
+            //             if (price > 1000)
+            //             indexes.push(ind+1)
+            //         })
+            //     )
+            //     return indexes
+            // }  
             function getPricesIndexMoreThan1000(generatePriceHistory) {
-                let indexes = []
-                generatePriceHistory().filter (
-                    ((price,ind,arr) => {
-                        if (price > 1000)
-                        indexes.push(ind+1)
-                    })
-                )
+                let indexes = generatePriceHistory().reduce (
+                    (prevPrice, price,ind) => {
+                        if (price > 1000) 
+                        prevPrice.push(ind)
+                        return prevPrice},[])
                 return indexes
             }  
+
+
             document.write(getPricesIndexMoreThan1000(generatePriceHistory))              
         </script>
         <li>Сформувати список з тих цін, які більші за попереднє значення</li>
@@ -53,7 +62,7 @@
             function getGreaterPricesList(generatePriceHistory) {
                 let pricesGreaterThanPrevValue = generatePriceHistory().reduce(
                     (prevValue,price,ind,arr)=> 
-                    {if (price>arr[ind-1] && ind > 0) prevValue.push(ind)
+                    {if (price>arr[ind-1] && ind > 0) prevValue.push(price)
                         return prevValue}
                         ,[])
                 return pricesGreaterThanPrevValue

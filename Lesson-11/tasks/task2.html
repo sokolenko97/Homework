@@ -14,14 +14,231 @@
     <a href="./task3.html">Далі</a>
     <h2>Відповідь:</h2>
     <script>
-        // Аргументи
+      
+      class ListCreator{
+        constructor (names,listTag){
+            this.names = names
+            this.listTag = listTag
+        }
 
+      getFilteredList(textPiece){
+        return this.names.filter(el=>el.toLowerCase().includes(textPiece.toLowerCase()))
+      }
+      printList(textPiece){
+        let listToPrint = this.names
+        if(textPiece) listToPrint = this.getFilteredList(textPiece)
+        document.write(`<${this.listTag}>`)
+        if (listToPrint.length > 0) {
+            listToPrint.forEach(name => {
+                document.write(`<li>${name}</li>`)
+            });
+            document.write(`</${this.listTag}>`)
+        }
+        else document.write(`</${this.listTag}>`)
+      }
+    }
+
+      let testNameList = ['Olga', 'Igor', 'Petya']
+      let list1 = new ListCreator(testNameList, 'ul')
+      list1.printList()
+
+    class TTime{
+        constructor (initialHours,initialMinutes){
+            this.minutes = initialMinutes
+            this.hours = initialHours
+            this.hours = this.hours % 24
+        }
+
+        correctTime(){
+            if(this.minutes>=0){
+            const addHours = Math.floor(this.minutes/60)
+            this.minutes = this.minutes%60
+            this.hours += addHours
+        }
+        else {
+            this.minutes=59
+            this.hours--
+        }
+            if (this.hours<0) this.hours =23
+            else this.hours = this.hours % 24
+        }
+
+        increaseHours(){
+           this.hours++ 
+           this.correctTime()
+        }
+
+        decreaceHours(){
+            this.hours-- 
+           this.correctTime()
+        }
+
+        increaseMinutes(){
+            this.minutes++ 
+           this.correctTime()
+        }
+
+        decreaceMinutes(){
+            this.minutes-- 
+           this.correctTime()
+        }
+        toString(){
+            return `${this.hours} : ${this.minutes}`
+        }
+    }
+
+    let time1 = new TTime(-9,789)
+    time1.decreaceMinutes()
+
+    document.write(time1)
+
+    class Pupil{
         
-        // Обчислення
+        constructor (name,age,averageScore){
+        this.name = name
+        this.#age = age
+        this.averageScore = averageScore
+        }
+        
+        #averageScore
+        toString(){
+            return `${this.name} : ${this.#age}, average ${this.#averageScore}`
+
+        }
+        #age
+        get Age(){
+            return this.#age
+        }
+        set Age(newAge){
+            if (newAge<7 || newAge > 30)
+            throw new Error('Incorrect age') 
+            this.#age = newAge
+        }
+        get AverageScore(){
+            return this.#averageScore
+        }
+        set AverageScore(val){
+            if (val <0 || val > 12) throw new Error('Incorrect')
+                this.#averageScore =val
+        }
+    }
+
+    let p1 = new Pupil('Igor', 10, 60)
+    let s = p1.Age
+    p1.Age = 7
+    document.write(p1)
+    console.log(p1);
 
 
-        // Вивод даних
+    class Client{
+        #account
+        #money
+        constructor(name, money){
+            this.name = name
+            this.#account = Math.floor(Math.random()*10000)
+            this.Money = money
+        }
+        get Money(){
+            return this.#money
+        }
+        set Money(val){
+            if (val<0) throw new Error('Incorrect')
+            this.#money = val
+        }
+        toString(){
+            return `${this.name} : ${this.Money}`
+        }
+        get Account(){
+            return this.#account
+        }
+    }
 
+    const cl1 = new Client('Igor', 20000)
+    cl1.Money = 10000
+    document.write(cl1)
+
+    class Product{
+        #title
+
+        get Title(){
+            return this.#title
+        }
+        set Title(newTitle){
+            if(newTitle.lenght ===0) throw new Error('Incorrect')
+            this.#title = newTitle
+        }
+
+        #amount
+        get Amount(){
+            return this.#amount
+        }
+        set Amount(newAmount){
+            if(newAmount<0) throw new Error('Incorrect')
+            this.#amount = newAmount
+        }
+
+        #price
+        get Price(){
+            return this.#price
+        }
+        set Price(newPrice){
+            if(newPrice<0) throw new Error('Incorrect')
+            this.#price = newPrice
+        }
+
+        // Constructor
+
+        constructor(title,amount,price){
+            this.Title = title
+            this.Amount = amount
+            this.Price = price
+        }
+
+        // Methods
+
+        reduceProductAmount(reduceVal){
+            if(this.Amount<reduceVal)throw new Error('Not enough in stock')
+            this.Amount -= reduceVal
+        }
+
+        addProductAmount(val){
+            if(val<0) throw new Error('Incorrect')
+            this.Amount += val
+        }
+
+        // Worse
+        getTotalPrice(){
+            return this.Amount*this.Price
+        }
+
+        // Better
+        get TotalPrice(){
+            return this.Amount*this.Price
+        }
+
+        setDiscount(percentage){
+            if (percentage<0) throw new Error('Incorrect')
+            this.Price *= 1-percentage/100
+        }
+
+        getPriceOfProductAmount(productAmount){
+            if(productAmount<0) throw new Error('Incorrect')
+            return productAmount * this.Price
+        }
+
+        toString(){
+            return `${this.Title}:${this.TotalPrice}`
+        }
+    }
+
+    try{
+        let prod1 = new Product('Tea',234,37)
+        prod1.setDiscount(10)
+    document.write(prod1)
+    } catch (error){
+    document.write('Error')
+    document.write('Error')
+    }
 
 
     </script>

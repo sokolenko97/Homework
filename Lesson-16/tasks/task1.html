@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../css/task.css">
+</head>
+<body>
+    <h1>Задача 1</h1>
+    <p>Створити клас TDate для роботи із датами у форматі “день.місяць.рік”. Дата представляється структурою із трьома полями. Реалізувати методи збільшення/зменшення дати на певну кількість днів, місяців чи років. Введення та виведення дати реалізувати за допомогою методу  toString.</p>
+    <a href="./task5.html">Назад</a>
+    <a href="../index.html">На головну</a>
+    <a href="./task1.html">Ще раз</a>
+    <a href="./task2.html">Далі</a>
+    <h2>Відповідь:</h2>
+    <script>
+       
+       class TDate{
+        #day
+        
+        get Day(){
+            return this.#day
+        }
+        set Day(val){
+            if(val<0||val>31) throw new Error('Введіть корректний день місяця')
+            this.#day = val
+        }
+
+        #month
+
+        get Month(){
+            return this.#month
+        }
+        set Month(val){
+            if(val<0||val>12) throw new Error('Введіть корректний місяць')
+            this.#month = val
+        }
+
+        #year
+
+        get Year(){
+            return this.#year
+        }
+        set Year(val){
+            if(val<0||val>2050) throw new Error('Введіть корректний рік')
+            this.#year = val
+        }
+
+        constructor(day,month,year){
+            this.Day = day
+            this.Month = month
+            this.Year = year
+        }
+
+        correctDate(){
+            if(this.Day>=0){
+                const addMonth = Math.floor(this.Day/30)
+                this.Day = this.Day%30
+                this.Month +- addMonth
+            }
+            else{
+                this.Day=30
+                this.Month--
+            }
+
+            if (this.Month>=0) {
+                const addYear = Math.floor(this.Month/12)
+                this.Month = this.Month%12
+                this.Year +- addYear
+            }
+            else{
+                this.Month=30
+                this.Year--
+            }
+            
+            // if (this.Month<0) thisMonth=11
+            // else this.Month = this.Month % 12
+            
+        }
+
+        reduceDays(val){
+            if(val<0||val>748250) throw new Error('Введіть корректне значення днів')
+            this.Day-=val
+            this.correctDate()
+        }
+        reduceMonths(val){
+            if(val<0||val>24600) throw new Error('Введіть корректне значення місяців')
+            this.Month-=val
+            this.correctDate()
+        }
+        reduceYears(val){
+            if(val<0||val>2050) throw new Error('Введіть корректне значення років')
+            this.Year-=val
+            this.correctDate()
+        }
+
+        increaseDays(val){
+            if(val<0) throw new Error('Введіть корректне значення днів')
+            this.Day+=val
+            this.correctDate()
+        }
+        increaseMonths(val){
+            if(val<0) throw new Error('Введіть корректне значення місяців')
+            this.Month+=val
+            this.correctDate()
+        }
+        increaseYears(val){
+            if(val<0) throw new Error('Введіть корректне значення років')
+            this.Year+=val
+            this.correctDate()
+        }
+        toString(){
+            return `${this.Day}/${this.Month}/${this.Year}`
+        }
+
+       }
+       let date = new TDate(4,12,2024)
+    //    date.increaseDays(1)
+       document.write(date)
+
+    </script>
+</body>
+</html>
